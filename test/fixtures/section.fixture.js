@@ -4,7 +4,7 @@
 
 var fixtures = require('node-mongoose-fixtures');
 
-function userFixture(callback) {
+function sectionFixture(callback) {
     fixtures.save('Section', {
         Section: [
             {
@@ -33,4 +33,4 @@ function userFixture(callback) {
     });
 }
 
-module.exports = userFixture;
+module.exports = sectionFixture;

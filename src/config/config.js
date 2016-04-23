@@ -17,6 +17,8 @@ var url = require(appRoot + '/src/config/database')();
 require(appRoot + '/src/models/user.js')();
 require(appRoot + '/src/models/hospital.js')();
 require(appRoot + '/src/models/section.js')();
+require(appRoot + '/src/models/hospital.section.js')();
+require(appRoot + '/src/models/patient.js')();
 
 module.exports = function(app, express) {
     
@@ -31,7 +33,6 @@ module.exports = function(app, express) {
     app.use(bodyParser.urlencoded({ extended: false }));
     app.use(cookieParser());
     app.use(express.static(path.join(appRoot + '/src/public')));
-
     app.use('/api', publicApi);
 
     mongoose.connection

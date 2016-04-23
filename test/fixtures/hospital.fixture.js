@@ -4,7 +4,7 @@
 
 var fixtures = require('node-mongoose-fixtures');
 
-function userFixture(callback) {
+function hospitalFixture(callback) {
     fixtures.save('Hospital', {
         Hospital: [
             {
@@ -51,4 +51,4 @@ function userFixture(callback) {
     });
 }
 
-module.exports = userFixture;
+module.exports = hospitalFixture;

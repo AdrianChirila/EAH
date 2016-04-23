@@ -11,13 +11,15 @@ var userFixture = require(appRoot + '/test/fixtures/user.fixture');
 var hospitalFixture = require(appRoot + '/test/fixtures/hospital.fixture');
 var sectionFixture = require(appRoot + '/test/fixtures/section.fixture');
 var hospitalSection = require(appRoot + '/test/fixtures/hospital.section.fixture');
-
+var patient = require(appRoot + '/test/fixtures/patient.fixture');
 
 var saveFixtures = function(callback) {
     async.waterfall([
         userFixture,
         hospitalFixture,
-        sectionFixture
+        sectionFixture,
+        hospitalSection,
+        patient
     ], callback);
 };
 

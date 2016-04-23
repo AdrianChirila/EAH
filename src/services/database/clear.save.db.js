@@ -15,6 +15,8 @@ var url = require(appRoot + '/src/config/database')();
 require(appRoot + '/src/models/user')();
 require(appRoot + '/src/models/hospital')();
 require(appRoot + '/src/models/section')();
+require(appRoot + '/src/models/hospital.section')();
+require(appRoot + '/src/models/patient')();
 
 function clearAndSave(done) {
     async.waterfall([
@@ -22,14 +24,6 @@ function clearAndSave(done) {
             mongoose.connect(url, function(err) {
                 return callback(err);
             });
-            // mongoose.connection
-            //     .on('error', function (err) {
-            //         callback(err);
-            //     })
-            //     .on('close', function(err) { console.log('Database connection closed.'); callback(err) })
-            //     .once('open', function()  {console.log('connected to database'); callback(null)});
-            // console.log(url);
-            // mongoose.connect(url);
         },
         function(callback) {
             fixtures.reset(mongoose, function(err) {

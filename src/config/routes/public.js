@@ -8,6 +8,9 @@ var router = express.Router();
 var logIn = require(appRoot + '/src/apis/auth');
 var hospitalController = require(appRoot + '/src/controllers/' +
     'hospital.controller');
+var patientController = require(appRoot + '/src/controllers/' +
+    'patient.controller');
+
 
 module.exports = function() {
     router.post('/login', logIn);
@@ -15,6 +18,7 @@ module.exports = function() {
     router.get('/test', function(req, res) {
         res.status(200).send({message: "salut !!!"});
     });
+    router.get('/patient/:cardId', patientController.getByCardId);
 
     return router;
 };
